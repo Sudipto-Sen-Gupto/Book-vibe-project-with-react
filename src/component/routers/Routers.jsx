@@ -1,0 +1,27 @@
+import { createBrowserRouter } from "react-router";
+import Root from "../../pages/root/Root";
+import Home from "../../pages/home/Home";
+import Navbar from "../navbar/Navbar";
+import ListedBook from "../../pages/Listedbook/ListedBook";
+import ReadingPage from "../../pages/pagetoread/ReadingPage";
+ export const router =createBrowserRouter([
+    {
+        path:'/',
+        Component: Root,
+        errorElement: <h1>404 not found</h1>,
+        children:[
+            {
+                index:true,
+                Component:Home
+            }
+            ,{
+                path:'list',
+                Component:ListedBook
+            },
+            {
+                path:'read',
+                Component:ReadingPage
+            }
+        ]
+    }
+])
