@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import Storybook from '../book/Storybook';
 
-const Books = () => {
-    const [data,setData]=useState([])
-    useEffect(()=>{
-          fetch('books.json').then(res=>res.json()).then(data=>setData(data))
-    },[])
+const Books = ({data}) => {
+    
     return (
-        <div>
-            
+        <div className=' p-4 grid grid-cols-1 md:grid-cols-3 gap-5'>
+            {
+              data.map(datum=><Storybook key={datum.bookId} datum={datum}></Storybook>)
+            }
         </div>
     );
 };

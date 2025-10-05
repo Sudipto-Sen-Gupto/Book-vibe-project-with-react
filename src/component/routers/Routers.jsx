@@ -12,6 +12,7 @@ import ReadingPage from "../../pages/pagetoread/ReadingPage";
         children:[
             {
                 index:true,
+                loader:()=> fetch('books.json').then(res=>res.json()),
                 Component:Home
             }
             ,{
