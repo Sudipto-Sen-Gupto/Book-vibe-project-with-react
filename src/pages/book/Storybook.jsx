@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router';
 import { Star } from 'lucide-react';
+
 const Storybook = ({datum}) => {
     
     console.log(datum);
-  const {bookName,author,image,rating,tags,category}=datum
+  const {bookId,bookName,author,image,rating,tags,category}=datum
     return (
+        <Link to={`storybook/${bookId}`}>
         <div className='lg:w-[374px] h-[450] shadow-lg p-5 rounded-2xl '>
             <div className='bg-gray-100 p-6 rounded-2xl'>
                    <img src={image} className='w-[134px] h-[164px] mx-auto' alt="" />
@@ -27,6 +30,7 @@ const Storybook = ({datum}) => {
            <p className='flex items-center gap-4'> <span>{rating}</span> <Star /> </p>
            </div>
         </div>
+        </Link>
     );
 };
 

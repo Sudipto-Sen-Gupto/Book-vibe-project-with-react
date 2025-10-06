@@ -4,6 +4,7 @@ import Home from "../../pages/home/Home";
 import Navbar from "../navbar/Navbar";
 import ListedBook from "../../pages/Listedbook/ListedBook";
 import ReadingPage from "../../pages/pagetoread/ReadingPage";
+import Landingpage from "../../pages/Land/Landingpage";
  export const router =createBrowserRouter([
     {
         path:'/',
@@ -22,6 +23,10 @@ import ReadingPage from "../../pages/pagetoread/ReadingPage";
             {
                 path:'read',
                 Component:ReadingPage
+            },{
+                path:'/storybook/:id',
+                loader:()=> fetch("books.json").then(res=>res.json()) ,
+                Component:Landingpage
             }
         ]
     }
