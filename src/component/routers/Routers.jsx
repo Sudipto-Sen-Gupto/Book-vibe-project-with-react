@@ -18,6 +18,7 @@ import Landingpage from "../../pages/Land/Landingpage";
             }
             ,{
                 path:'list',
+                loader:()=> fetch('books.json').then(res=>res.json()),
                 Component:ListedBook
             },
             {
@@ -25,7 +26,7 @@ import Landingpage from "../../pages/Land/Landingpage";
                 Component:ReadingPage
             },{
                 path:'/storybook/:id',
-                loader:()=> fetch("books.json").then(res=>res.json()) ,
+                loader:()=> fetch("books.json") ,
                 Component:Landingpage
             }
         ]
